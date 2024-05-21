@@ -1,0 +1,52 @@
+﻿@model IEnumerable<EmployeeViewModel>
+
+
+<table class="table table-striped table-hover mt-3">
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(D=>D.Photo)</td>
+            <td>@Html.DisplayNameFor(D=>D.Name)</td>
+            <td>@Html.DisplayNameFor(D=>D.Age)</td>
+            <td>@Html.DisplayNameFor(D=>D.Salary)</td>
+            <td>@Html.DisplayNameFor(D=>D.Department)</td>
+            <td>@Html.DisplayNameFor(D=>D.IsActive)</td>
+            <td>Details</td>
+            <td class="text-success">Update</td>
+            <td class="text-danger">Delete</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Employee in Model)
+        {
+            <tr>
+                <td>
+                    <img src="~/assets/File/Images/@Employee.PhotoUrl" width=50 height=50 class="rounded-circle">
+                </td>
+                <td>@Employee.Name</td>
+                <td>@Employee.Age</td>
+                <td>@Html.DisplayFor(E=>Employee.Salary)</td>
+                <td>@Html.DisplayFor(E=>Employee.Department.Name)</td>
+                <td>
+                    @if (Employee.IsActive == true)
+                    {
+                        <i class="fa-solid fa-circle-check fa-3" style="color:green"></i>
+                    }
+                    else
+                    {
+                        <i class="fa-solid fa-circle-xmark fa-3" style="color:red"></i>
+                    }
+
+                </td>
+                <td>
+                    <input class="btn btn-outline-warning" value="Details" onclick="details(@Employee.Id)"
+                           data-bs-toggle="modal" data-bs-target="#Detailes" />
+                </td>
+                <td><a class="btn btn-outline-success" asp-action="Edit" asp-route-id="@Employee.Id">Update</a></td>
+                <td> <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@Employee.Id">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script src="~/assets/vendor/libs/jquery/jquery.js"></script>
+

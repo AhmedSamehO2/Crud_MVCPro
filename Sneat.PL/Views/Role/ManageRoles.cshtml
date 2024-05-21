@@ -1,0 +1,56 @@
+﻿@model UserRoleViewModel
+@{
+    ViewData["Title"] = "ManageRoles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ManageRoles</h1>
+
+
+<form asp-action="ManageRoles" method="post">
+    <div class="my-5">
+        <div class="card-header">
+            Add or Remove Users from Role
+            <br />
+
+            <div class="card-body">
+                
+                <input disabled asp-for="id" class="form-control" />
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Module</th>
+                            <th>Permission</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.Roles.Count; i++)
+
+                        {
+                            <tr>
+                                <td>
+                                    <div class="form-check m-1">
+                                        <input hidden asp-for="@Model.Roles[i].Name" />
+                                        <div class="demo-checkbox">
+                                            <input asp-for="@Model.Roles[i].IsSelected" type="checkbox" class="form-check-input" />
+                                        </div>
+                                         <label class="form-check-label">@Model.Roles[i].Name</label>
+                                    </div>
+                                </td>
+                             
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="card-footer">
+                <input type="submit" value="submit" class="btn btn-primary"  />
+                
+            </div>
+        </div>
+    </div>
+</form>

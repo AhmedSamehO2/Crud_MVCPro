@@ -1,0 +1,45 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/Auth_Layout.cshtml";
+}
+
+<div asp-validation-summary="All" class="text-danger"></div>
+<div>
+    <form asp-action="Login">
+
+        <div class="mb-3">
+            <input asp-for="Email" class="form-control" placeholder="Enter your email" />
+            <span class="text-danger" asp-validation-for="Email"> </span>
+
+        </div>
+        <div class="mb-3 form-password-toggle">
+            <div class="input-group input-group-merge">
+                <input asp-for="Password" class="form-control" placeholder="Password" />
+                <br/>
+                <span class="text-danger" asp-validation-for="Password"> </span>
+            </div>
+        </div>
+        <a asp-action="ForgotPassword">
+            <small>Forgot Password?</small>
+        </a>
+        <div class="mb-3">
+            <div class="form-check">
+                <input class="form-check-input" asp-for="RemeberMe" />
+                <label class="form-check-label" for="terms-conditions">
+                    I agree to
+                    <a href="javascript:void(0);">privacy policy & terms</a>
+                </label>
+            </div>
+        </div>
+        <input type="submit" value="SignIn" class="btn btn-info" />
+    </form>
+
+    <p>You Do'nt have Account <a asp-action="Register">Sign Up Now </a> </p>
+</div>
+
+
+@section MicrosoftValidationScript{
+    <script src="~/libs/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/libs/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

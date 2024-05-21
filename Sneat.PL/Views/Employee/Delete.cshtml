@@ -1,0 +1,74 @@
+﻿@model EmployeeViewModel
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var departmentsName = new SelectList(@ViewBag.Departments, "Id", "Name", Model.DepartmentId);
+}
+<form asp-action="Delete">
+    <input hidden asp-for="PhotoUrl" />
+    <input type="hidden" asp-for="CvUrl" class="form-control" />
+
+
+    <div class="w-50">
+        <img src="~/assets/File/Images/@Model.PhotoUrl" class="rounded-circle w-25" />
+    </div>
+
+    <div class="form-group">
+        <label class="col-form-label" asp-for="Name"></label>
+        <input readonly class="form-control" type="text" asp-for="Name" />
+
+    </div>
+
+    <div class="form-group">
+        <label class="col-form-label" asp-for="Age"></label>
+        <input readonly class="form-control" type="text" asp-for="Age" />
+
+    </div>
+
+    <div class="form-group">
+        <label class="col-form-label" asp-for="Salary"></label>
+        <input readonly class="form-control" asp-for="Salary" />
+
+    </div>
+    <div class="form-group">
+        <label class="col-form-label" asp-for="Department"></label>
+        <select disabled asp-for="DepartmentId" class="form-control"
+                asp-items="@departmentsName">
+            <option>Chosse Employee </option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label class="col-form-label" asp-for="Address"></label>
+        <input readonly class="form-control" asp-for="Address" />
+
+    </div>
+    <div class="form-group">
+        <label class="col-form-label" asp-for="Email"></label>
+        <input readonly class="form-control" type="email" asp-for="Email" />
+
+    </div>
+
+    <div class="form-group">
+        <label class="col-form-label" asp-for="PhoneNumber"></label>
+        <input readonly class="form-control" asp-for="PhoneNumber" />
+
+    </div>
+
+    <div class="demo-checkbox">
+        <input disabled type="checkbox" asp-for="IsActive">
+        <label asp-for="IsActive">IsActive</label>
+        <span asp-validation-for="IsActive" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-form-label" asp-for="HireDate"></label>
+        <input readonly class="form-control" type="date" asp-for="HireDate" />
+
+    </div>
+
+    <input type="submit" value="Delete" class="btn btn-primary" />
+    <a class="btn btn-dark" asp-action="Index"> back To list</a>
+</form>

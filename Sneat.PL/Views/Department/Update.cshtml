@@ -1,0 +1,21 @@
+﻿@model DepartmentViewModel
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+<div asp-validation-summary="All"></div>
+
+<form asp-action="Update">
+
+    <partial name="PartialView/Create_EditPrtial" />
+
+
+    <input type="submit" value="submit" class="btn btn-primary" />
+    <a class="btn btn-dark" asp-action="Index"> back To list</a>
+</form>
+@section MicrosoftValidation{
+    <script src="~/libs/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/libs/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

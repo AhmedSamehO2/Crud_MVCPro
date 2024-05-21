@@ -1,0 +1,20 @@
+﻿@model AddroleViewModel
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<form  asp-action="Edit" >
+    <input asp-for="Id" hidden class="form-control" />
+    <div class="form-group">
+        <label class="col-form-label" asp-for="Name"></label>
+        <input class="form-control" type="text" asp-for="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <input type="submit" class="btn btn-Info" value="Save" />
+    <div class="input-group mt-3 justify-content-center">
+        <input type="submit" class="btn btn-Info" value="Save" />
+        <a asp-action="Index" class="btn btn-secondary">Bake To Home</a>
+    </div>
+    </form>

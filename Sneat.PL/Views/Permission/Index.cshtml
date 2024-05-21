@@ -1,0 +1,35 @@
+﻿@inject IAuthorizationService AuthorizationService;
+@using Sneat.PL.Helper
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (AuthorizationService.AuthorizeAsync(User, Permmisions.Employee.View).Result.Succeeded)
+{
+    <h1>Index</h1>
+
+    <a class="btn btn-primary">View</a>
+}
+
+@if (AuthorizationService.AuthorizeAsync(User, Permmisions.Employee.Create).Result.Succeeded)
+{
+    <h1>Index</h1>
+
+    <a class="btn btn-primary">Create</a>
+}
+
+@if (AuthorizationService.AuthorizeAsync(User, Permmisions.Employee.Delete).Result.Succeeded)
+{
+    <h1>Index</h1>
+
+    <a class="btn btn-primary">Delete</a>
+}
+
+@if (AuthorizationService.AuthorizeAsync(User, Permmisions.Employee.Edit).Result.Succeeded)
+{
+    <h1>Index</h1>
+
+    <a class="btn btn-primary">Edit</a>
+}

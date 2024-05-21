@@ -1,0 +1,12 @@
+D:\Aliaa Dot Net\Sneat\Sneat.DAL\bin\Debug\net6.0\Sneat.DAL.deps.json
+D:\Aliaa Dot Net\Sneat\Sneat.DAL\bin\Debug\net6.0\Sneat.DAL.dll
+D:\Aliaa Dot Net\Sneat\Sneat.DAL\bin\Debug\net6.0\Sneat.DAL.pdb
+D:\Aliaa Dot Net\Sneat\Sneat.DAL\obj\Debug\net6.0\Sneat.DAL.csproj.AssemblyReference.cache
+D:\Aliaa Dot Net\Sneat\Sneat.DAL\obj\Debug\net6.0\Sneat.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Aliaa Dot Net\Sneat\Sneat.DAL\obj\Debug\net6.0\Sneat.DAL.AssemblyInfoInputs.cache
+D:\Aliaa Dot Net\Sneat\Sneat.DAL\obj\Debug\net6.0\Sneat.DAL.AssemblyInfo.cs
+D:\Aliaa Dot Net\Sneat\Sneat.DAL\obj\Debug\net6.0\Sneat.DAL.csproj.CoreCompileInputs.cache
+D:\Aliaa Dot Net\Sneat\Sneat.DAL\obj\Debug\net6.0\Sneat.DAL.dll
+D:\Aliaa Dot Net\Sneat\Sneat.DAL\obj\Debug\net6.0\refint\Sneat.DAL.dll
+D:\Aliaa Dot Net\Sneat\Sneat.DAL\obj\Debug\net6.0\Sneat.DAL.pdb
+D:\Aliaa Dot Net\Sneat\Sneat.DAL\obj\Debug\net6.0\ref\Sneat.DAL.dll

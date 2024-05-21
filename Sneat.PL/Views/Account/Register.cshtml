@@ -1,0 +1,51 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/Auth_Layout.cshtml";
+}
+<div asp-validation-summary="All" class="text-danger"></div>
+<div>
+<form  class="mb-3" asp-action="Register">
+    <div class="mb-3">
+        <input asp-for="FirstName" class="form-control"   placeholder=" FirstName" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <input asp-for="LastName" class="form-control" placeholder="LastName" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+
+    </div>
+    <div class="mb-3">
+        <input asp-for="Email" class="form-control" placeholder=" email" />
+            <span asp-validation-for="Email" class="text-danger"> </span>
+
+    </div>
+    <div class="mb-3 form-password-toggle">
+            <input class="form-control" asp-for="Password" placeholder="Password">
+            <span asp-validation-for="Password" class="text-danger"></span>
+            <br />
+            <input class=" form-control" asp-for="ConfirmPassword" placeholder="Password">
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            <br />
+    </div>
+
+    <div class="mb-3">
+        <div class="form-check">
+            <input class="form-check-input" asp-for="IsActive" />
+            <label class="form-check-label" for="terms-conditions">
+                I agree to
+                <a href="javascript:void(0);">privacy policy & terms</a>
+            </label>
+        </div>
+    </div>
+        <input type="submit" value="SignUp" class="btn btn-primary d-grid w-100" />
+</form>
+
+<p>Do you Have Account? <a asp-action="Login">Login</a> </p>
+</div>
+
+
+@section MicrosoftValidationScript{
+    <script src="~/libs/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/libs/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
